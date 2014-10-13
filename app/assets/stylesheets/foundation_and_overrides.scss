@@ -1474,7 +1474,7 @@ $row-width: em-calc(1100);
 
 // $topbar-dropdown-bg: #222;
 // $topbar-dropdown-link-color: #fff;
-// // $topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%);
+// $topbar-dropdown-link-bg: lighten($topbar-bg-color, 5%);
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.5;
@@ -1515,11 +1515,12 @@ $row-width: em-calc(1100);
 // Divider Styles
 
 // $topbar-divider-border-bottom: solid 1px lighten($topbar-bg-color, 10%);
-//  $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
+// $topbar-divider-border-top: solid 1px darken($topbar-bg-color, 10%);
 
 // Sticky Class
 
-// $topbar-sticky-class: ".sticky";
-// $topbar-arrows: true; //Set false to remove the triangle icon from the menu item
+$topbar-sticky-class: ".sticky";
+$topbar-arrows: true; //Set false to remove the triangle icon from the menu item
 
 @import 'foundation';
+@import 'foundation/components/top-bar';
