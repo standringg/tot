@@ -1,0 +1,63 @@
+
+
+<div class="center row">
+  <br><br><div class="small-2 large-2 columns"></div>
+  <div class="small-7 large-7 columns">
+    <right><h21>Product</h21></right>
+    <br>
+    <br>
+    <br>
+  </div>
+  <div class="small-3 large-3 columns"><left></left>
+  </div>
+</div>
+
+<div class="center row">
+  <div class="small-2 large-2 columns"></div>
+  <div class="small-8 large-8 columns">
+   <p id="notice"><%= notice %></p>
+<div class="row">
+  <div class="small-3 columns">
+    <right><strong>Title:</strong></right><br>
+  </div>
+  <div class="small-9 columns">
+    <left><%= @product.title %></left>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="small-3 columns">
+    <right><strong>Description:</strong></right><br>
+  </div>
+  <div class="small-9 columns">
+    <left><%= @product.description %></left>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="small-3 columns">
+    <right><strong>Image url:</strong></right><br>
+  </div>
+  <div class="small-9 columns">
+    <left><%= @product.image_url %></left>
+  </div>
+</div>
+<br>
+<div class="row">
+  <div class="small-3 columns">
+    <right><strong>Price:</strong></right><br>
+  </div>
+  <div class="small-9 columns">
+    <left><%= @product.price %></left>
+    <br>
+    <br>
+    <br>
+  </div>
+</div>
+</div>
+<div class="small-2 large-2 columns"><%= link_to 'Edit', edit_product_path(@product) %> | <%= link_to 'Back', products_path %></div>
+  
+  <br>
+  <br>
+  <br>
+</div>

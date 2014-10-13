@@ -1,0 +1,41 @@
+<div class="center row">
+  <br><br><div class="small-2 large-2 columns"></div>
+  <div class="small-7 large-7 columns">
+    <right><h21>All products</h21></right>
+  </div>
+  <div class="small-3 large-3 columns"><left><%= button_to 'New Product', new_product_path, class: "button radius" %></left>
+  </div>
+</div>
+<div class="center row">
+  <div class="small-2 large-2 columns"></div>
+  <div class="small-9 large-9 columns">
+    <table> <% @products.each do |product| %> 
+      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>"> 
+        <td> <%= image_tag(product.image_url, class: 'list_image') %> </td> 
+        <td class="list_description"> 
+          <dl> 
+            <dt><left><%= product.title %></dt>
+            <br> 
+            <dd><left><%= truncate(strip_tags(product.description), length: 80) %></dd> 
+          </dl>
+        </td>
+        <td class="list_actions">
+          <%= link_to 'Show', product %><br/>
+          <%= link_to 'Edit', edit_product_path(product) %><br/>
+          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %> 
+        </td>
+      </tr>
+      <% end %>
+    </table>
+    <br/>
+  </div>
+  <div class="small-1 large-1 columns"></div>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+  <br>
+</div>
+
+
