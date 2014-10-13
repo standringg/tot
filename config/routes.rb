@@ -1,7 +1,6 @@
 Tot::Application.routes.draw do
   root 'static_pages#home'
   match '/event_details', to: 'static_pages#event_details', via: 'get'
-  match '/event_details', to: 'static_pages#event_details', via: 'post'
   match '/course',        to: 'static_pages#course',        via: 'get'
   match '/products',      to: 'products#index',             via: 'get'
   match '/products/new',  to: 'products#new',               via: 'post'
