@@ -1,4 +1,8 @@
 Tot::Application.routes.draw do
+  resources :line_items
+
+  resources :carts
+
   get "store/index"
   root 'static_pages#home'
   match '/event_details', to: 'static_pages#event_details', via: 'get'
