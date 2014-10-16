@@ -1,11 +1,13 @@
 Tot::Application.routes.draw do
+  get "store/index"
   root 'static_pages#home'
   match '/event_details', to: 'static_pages#event_details', via: 'get'
   match '/course',        to: 'static_pages#course',        via: 'get'
   match '/products',      to: 'products#index',             via: 'get'
   match '/products/new',  to: 'products#new',               via: 'post'
   match '/about',         to: 'static_pages#about',         via: 'get'
-  
+  match '/store',         to: 'store#index',                via: 'get'        
+ 
   get "static_pages/home"
   resources :products
 
