@@ -1,4 +1,6 @@
 Tot::Application.routes.draw do
+  resources :orders
+
  resources :line_items do
     put 'decrease', on: :member
     put 'increase', on: :member
@@ -6,6 +8,10 @@ Tot::Application.routes.draw do
   resources :carts
 
   get "store/index"
+  resources :products do
+    get :who_bought, on: :member
+  end 
+  
   root 'static_pages#home'
   match '/event_details', to: 'static_pages#event_details', via: 'get'
   match '/course',        to: 'static_pages#course',        via: 'get'

@@ -1,41 +1,41 @@
 <div class="center row">
-  <br><br><div class="small-2 large-2 columns"></div>
-  <div class="small-7 large-7 columns">
-    <right><h21>All products</h21></right>
-  </div>
-  <div class="small-3 large-3 columns"><left><%= button_to 'New Product', new_product_path, method: "get", class: "button radius" %></left>
-  </div>
-</div>
-<div class="center row">
-  <div class="small-2 large-2 columns"></div>
-  <div class="small-9 large-9 columns">
-    <table> <% @products.each do |product| %> 
-      <tr class="<%= cycle('list_line_odd', 'list_line_even') %>"> 
-        <td> <%= image_tag(product.image_url, class: 'list_image') %> </td> 
-        <td class="list_description"> 
-          <dl> 
-            <dt><left><%= product.title %></dt>
-            <br> 
-            <dd><left><%= truncate(strip_tags(product.description), length: 80) %></dd> 
-          </dl>
-        </td>
-        <td class="list_actions">
-          <%= link_to 'Show', product %><br/>
-          <%= link_to 'Edit', edit_product_path(product) %><br/>
-          <%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %> 
-        </td>
-      </tr>
+  <div class="small-12 large-12 columns">
+    <fieldset>
+      <div class="center row">
+        <div class="small-6 large-6 columns">
+          <br>
+          <right><h21>All products</h21></right>
+        </div>
+        <div class="small-6 large-6 columns">
+          <%= button_to 'New Product', new_product_path, method: "get", class: "button large radius" %>
+        </div>
+      </div>
+      <% @products.each do |product| %>
+      <fieldset>
+      <div class="center row">
+        <div class="small-12 large-12 columns">
+          <div class="center row">
+            <div class="small-3 large-3 columns">
+              <%= image_tag(product.image_url, class: 'list_image') %> 
+            </div>
+            <div class="small-7 large-7 columns">
+              <left><h4><%= product.title %></h4></left><br><br>
+              <left><h4><%= sanitize(product.description) %></h4></left><br><br>
+              <left></h4>&nbsp;</h4></left><br>
+              <left><h4><span class="price"><%= number_to_currency(product.price) %></span></h4></left>
+            </div>
+            <div class="small-2 large-2 columns">
+              <%= button_to 'Edit', edit_product_path(product), method: "get", class: "button small-8 radius" %><br>
+              <%= button_to 'Delete', product, method: :delete, data: { confirm: 'Are you sure?'}, class: "button small-8 radius"  %> 
+            </div>
+          </div>
+        </div>
+      </div>
+      </fieldset>
       <% end %>
-    </table>
-    <br/>
+
+      </div>
+    </fieldset>
   </div>
-  <div class="small-1 large-1 columns"></div>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
 </div>
-
-
+  
